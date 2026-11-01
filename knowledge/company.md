@@ -12,4 +12,4 @@ We are an online service company.
 Email: snehasethi204@gmail.com
 
 ## Working Hours
-Monday to Saturday: 9 AM to 6 PM
+Monday to Saturday: Monday to Saturday: 9 AM to 6 PM
