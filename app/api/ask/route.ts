@@ -26,17 +26,17 @@ export async function POST(request: Request) {
 
     const ai = new GoogleGenAI({ apiKey });
 
-    const response = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
-      contents: `Answer using only this information:
+    const response = await ai.interactions.create({
+  model: "gemini-3.8-flash",
+  input: `Answer using only this information:
 
 ${knowledge}
 
 Question: ${question}`,
-    });
+});
 
     return NextResponse.json({
-      answer: response.text || "No answer generated.",
+      answer: response.output_text || "No answer generated.",
     });
 
  } catch (error) {
