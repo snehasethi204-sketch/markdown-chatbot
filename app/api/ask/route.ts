@@ -39,12 +39,14 @@ Question: ${question}`,
       answer: response.text || "No answer generated.",
     });
 
-  } catch (error) {
-    console.error("API ERROR:", error);
+ } catch (error) {
+  const message =
+    error instanceof Error ? error.message : String(error);
 
-    return NextResponse.json(
-      { error: "Something went wrong. Check the terminal." },
-      { status: 500 }
-    );
-  }
-}
+  console.error("API ERROR:", message);
+
+  return NextResponse.json(
+    { answer: `API ERROR: ${message}` },
+    { status: 500 }
+  );
+}}
