@@ -33,6 +33,9 @@ export async function POST(request: Request) {
 ${knowledge}
 
 Question: ${question}`,
+generation_config: {
+  thinking_level: "low",
+},
 });
 
     return NextResponse.json({
